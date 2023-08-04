@@ -1,0 +1,82 @@
+        * {
+      box-sizing: border-box;
+    }
+    
+   body{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+   }
+   .magic{
+      background-color:  #060606;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      font-size: 16px;
+      padding: 16px 16px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      letter-spacing: 1px;
+      box-shadow: 0 3px rgba(4, 4, 4, 0.5);
+      z-index: 100;
+      font-family: 'Poppins', sans-serif;
+   }
+   .magic:focus {
+    outline: none;
+  }
+  
+  .magic:active {
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+  .boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    transition: 0.4s ease;
+  }
+  .boxes.big {
+    width: 600px;
+    height: 600px;
+  }
+  .boxes.big .box {
+    transform: rotateZ(360deg);
+  }
+  .box {
+    background-image:url(../images/altumcode-U0tBTn8UR8I-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    position: relative;
+    height: 125px;
+    width: 125px;
+    transition: 0.4s ease;
+  }
+  .box::after {
+    content: '';
+    background-color: #015359;
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    height: 100%;
+    width: 15px;
+    transform: skewY(45deg);
+  }
+  
+  .box::before {
+    content: '';
+    background-color:#015359;
+    position: absolute;
+    bottom: -15px;
+    left: 8px;
+    height: 15px;
+    width: 100%;
+    transform: skewX(45deg);
+  }
